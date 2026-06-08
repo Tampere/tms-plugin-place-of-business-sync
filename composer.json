@@ -1,0 +1,40 @@
+{
+    "name": "tampere/tms-plugin-place-of-business-sync",
+    "type": "wordpress-plugin",
+    "license": "GPL-3.0-or-later",
+    "description": "Sync place of business from Tampere.fi Drupal site",
+    "homepage": "https://geniem.com",
+    "authors": [
+        {
+            "name": "Ville Viklund",
+            "role": "Developer",
+            "homepage": "https://github.com/ville6000"
+        }
+    ],
+    "minimum-stability": "stable",
+    "keywords": [
+        "wordpress", "wp", "plugin"
+    ],
+    "require": {
+        "php": ">=7.4|^8",
+        "composer/installers": "^v1.10.0"
+    },
+    "autoload": {
+        "psr-4": {"Tms\\Plugin\\PlaceOfBusinessSync\\": "src/"}
+    },
+    "require-dev": {
+        "roave/security-advisories": "dev-latest",
+        "devgeniem/geniem-rules-codesniffer": "^1"
+    },
+    "scripts": {
+        "lint": "vendor/bin/phpcs --standard=./phpcs.xml -s --warning-severity=0",
+        "lint-all": "vendor/bin/phpcs --standard=phpcs.xml",
+        "lint-fix": "vendor/bin/phpcbf --standard=phpcs.xml --basepath=."
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    }
+}
